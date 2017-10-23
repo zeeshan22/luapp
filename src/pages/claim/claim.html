@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="gib2">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="text-center logo-top"><img src="img/logo.png" alt="Your logo here"/></ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<div *ngIf="!reportclaim">
+<button ion-button block color="gib2"  (click)="reportclaim=true">Report a claim</button>
+<button ion-button block color="gib2"  (click)="claimrecord()">My Claim</button>
+<button ion-button block color="gib2"  (click)="claimtrack()">Track Claim</button>
+<button ion-button block color="gib2"  (click)="docpg()">Submit Further documents</button>
+</div>
+<div *ngIf="reportclaim">
+<!--button ion-button color="gib2"  block (click)="reportclaim=false">  Report a claim</button-->
+
+<button ion-button block color="gib2" (click)="cliamdetailspage()">Enter Claim Details</button>
+<button ion-button block color="gib2"  (click)="docpg()">Claim Documents</button>
+</div>
+
+<!--ul class="">
+      <li *ngFor="let hero of claimvalues"
+        >
+        <span class="badge">{{hero.iban}}</span> {{hero.mobile_no}}
+		<div>
+        <label>name: </label>
+        <input [(ngModel)]="hero.iban" placeholder="name"/>
+      </div>
+      </li>
+    </ul-->
+</ion-content>

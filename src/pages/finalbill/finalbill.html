@@ -1,0 +1,138 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title class="text-center" >Final Bill</ion-title>
+    <!--<ion-buttons right>
+      <button ion-button icon-only><ion-icon name="md-search"></ion-icon></button>
+    </ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+	  
+	<div class="account_name">
+		<h2>{{this.customerdata.CUSTNAME}}</h2>
+		<!--<h5>Pay Bill:<span class="color_red">12345667889</span></h5>-->
+	</div>
+	
+	
+ 	
+	
+	
+	<ion-list class="dash_list"  *ngFor="let data of result1; let i = index">
+			
+			 
+			 
+			 <ion-item  class="list_item list_item_shadow arrow-dropright color1 main_{{data.$id}}" (click)="view_details(data.$id);"  >
+				
+				<div class="mylist_canvas">
+					<div class="mylist_heading "> 
+						<div class="strong">Tower: {{data.TowerName}} </div>
+						<div class="desc">Account No: {{data.accountno}}</div>
+					</div> 
+					<div class="mylist_heading"> 
+						<div class="strong">Unit#: {{data.flatno}}</div>
+						<div class="desc">Created Date: {{data.CreateDate | date: "dd/MM/yyyy"}}</div>
+					</div> 
+				</div>
+				
+				<div class="mylist_arrow"> 
+					 <ion-icon ios="ios-more" md="md-more"></ion-icon>
+				</div>
+				
+																
+			</ion-item>
+			 
+			 
+			 <ion-item class="list_item hide_item item_{{data.$id}}" >
+				<ion-grid class="mygrid">
+				
+					<!--<ion-row text-center>
+						<ion-col><b>Tower/Building Name </b></ion-col>
+						<ion-col>{{data.TowerName}} </ion-col>
+					</ion-row>-->
+					<ion-row text-center>
+						<ion-col><b>Customer Name </b></ion-col>
+						<ion-col>{{data.CUSTNAME}} </ion-col>
+					</ion-row>
+					
+					
+					<ion-row text-center>
+						<ion-col><b>Phone: </b></ion-col>
+						<ion-col>{{data.PHONE}} </ion-col>
+					</ion-row>
+					
+					<ion-row text-center>
+						<ion-col><b>Email:</b></ion-col>
+						<ion-col>{{data.EMAIL}} </ion-col>
+					</ion-row>
+					
+					<ion-row text-center>
+						<ion-col></ion-col>
+						<ion-col><button ion-button class="button1 dark" (click)="bill_request(data);">Final Bill Request</button> </ion-col>
+					</ion-row>
+					
+				
+					
+						
+					
+					
+					
+				
+				</ion-grid>
+				
+				
+		 </ion-item>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		
+	</ion-list>
+	
+	
+	
+	
+	
+	
+	
+	
+
+  
+  
+  
+  
+  
+  
+</ion-content>
+<ion-footer class="dashboard_footer">
+	
+	<div class="ion_toolbar2">
+		<div class="ion-tab">
+			<div class="tab" (click)="home()"><div><ion-icon name="md-home"></ion-icon><br><span class="tab_text">Home</span></div></div>
+			<div class="tab" (click)="paybill()"><div><ion-icon name="card"></ion-icon><br><span class="tab_text">Pay Bill</span></div></div>
+			
+			<div class="tab" (click)="enquiry()"><div><ion-icon name="md-help"></ion-icon><br><span class="tab_text">Enquiry</span></div></div>
+			<div class="tab" (click)="inbox()"><div><ion-icon name="mail"></ion-icon><br><span class="tab_text">Inbox</span></div></div>
+			
+		</div>
+	</div>
+	
+</ion-footer>
+
+
+
+
+

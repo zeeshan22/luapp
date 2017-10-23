@@ -1,0 +1,122 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title class="text-center" >Final Bill Request</ion-title>
+    <ion-buttons right>
+   
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	
+
+<form (ngSubmit)="submit_req()">
+	<ion-list class="singup_list">
+	
+	      
+		  
+		  <ion-input placeholder="Tower name" name="customerid"  [(ngModel)]="customerid" class="displaynone"></ion-input>
+		<ion-item>
+			<ion-label color="primary" stacked >Tower Name:</ion-label>
+			<ion-input placeholder="Tower name" name="towername"  [(ngModel)]="towername"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Unit No:</ion-label>
+			<ion-input placeholder="Unit No" name="unitno"  [(ngModel)]="unitno"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Account ID:</ion-label>
+			<ion-input placeholder="Account ID" name="accountid"  [(ngModel)]="accountid"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Full Name:</ion-label>
+			<ion-input placeholder="Full Name" name="fullname"  [(ngModel)]="fullname"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Email Address:</ion-label>
+			<ion-input placeholder="Email Address" name="email"  [(ngModel)]="email"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Contact No:</ion-label>
+			<ion-input placeholder="Contact No" name="contactno"  [(ngModel)]="contactno"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			
+			<ion-label color="primary" stacked >Move in date:</ion-label>
+			<ion-datetime displayFormat="DD/MM/YYYY" placeholder="Move in date" name="move_in_data"  [(ngModel)]="move_in_data"></ion-datetime>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Move out date:</ion-label>
+			<ion-datetime displayFormat="DD/MM/YYYY" placeholder="Move out date" name="move_out_data"  [(ngModel)]="move_out_data"></ion-datetime>
+			
+		</ion-item>
+		<ion-item>
+
+			<ion-label color="primary" stacked >Requested Date:</ion-label>
+			<ion-datetime displayFormat="DD/MM/YYYY" placeholder="Requested Date" name="requested_date"  [(ngModel)]="requested_date"></ion-datetime>
+			
+		</ion-item>
+		
+		<ion-item class="select_group">
+		  	<ion-label color="primary" stacked >NOC Request:</ion-label>
+			<ion-select multiple="false" name="noc_request" [(ngModel)]="noc_request" (ionChange)="noc_change()">
+		  		<ion-option value='0' selected>NOC Request</ion-option>
+				<ion-option value='true' >Yes</ion-option>
+				<ion-option value='false' >No</ion-option>
+			
+		  	</ion-select>
+		
+		  
+		</ion-item>
+		
+		<ion-item class="fee">
+			<ion-label color="primary" stacked >Noc Fee:</ion-label>
+			<ion-input placeholder="Noc Fee" name="noc_fee"  [(ngModel)]="noc_fee"></ion-input>
+			
+		</ion-item>
+		
+		
+		
+		<ion-item>
+			<ion-label color="primary"  stacked>Comment:</ion-label>
+			<ion-input placeholder="Comment" name="comment"  [(ngModel)]="comment"></ion-input>
+			
+		</ion-item>
+		
+		
+		
+		
+		
+	</ion-list>
+	<ion-input type="hidden" placeholder="Noc Fee" name="temp_noc_fee"  [(ngModel)]="temp_noc_fee" ></ion-input>
+	
+	<button color="gib1"  type="submit" block ion-button class="button button-block button-positive signup_button dark">Submit</button>
+
+  
+
+
+
+</form>
+  
+
+
+
+</ion-content>
+
+
+
+
+

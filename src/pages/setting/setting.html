@@ -1,0 +1,124 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title >Settings</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only><ion-icon name="search1"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+	<ion-content padding>
+	
+	
+	<div class="setting_heading">
+			<h3>Genral Settings</h3>
+	</div>
+	
+	<ion-list class="setting_heading_list">
+	
+	  <ion-item>
+		<ion-label><img src="./img/icon_bell.jpg" class="bell_icon"> &nbsp;Push Notifcation</ion-label>
+		<ion-toggle [(ngModel)]="pepperoni" ></ion-toggle>
+	  </ion-item>
+	
+	  <ion-item>
+		<ion-label><img src="./img/icon_db.jpg" class="db_icon">  &nbsp;Payment</ion-label>
+		<ion-toggle [(ngModel)]="sausage" ></ion-toggle>
+	  </ion-item>
+	
+	  
+	
+	</ion-list>
+	
+	
+	
+	
+	
+	
+	<div class="setting_heading">
+			<h3>Help Center</h3>
+	</div>
+	
+	<ion-list class="setting_heading_list">
+	
+	  <ion-item class="facebook" (click)="go_to_about_this_app()">
+			<ion-label>&nbsp;About this app &nbsp;</ion-label>
+			 
+	  </ion-item>
+	
+	  <ion-item class="facebook" (click)="go_to_term_of_use_mob()">
+			<ion-label>&nbsp;Terms of use</ion-label>
+	
+	  </ion-item>
+	  
+	  <ion-item class="facebook" (click)="go_to_tac()">
+			<ion-label>&nbsp;Term and condition &nbsp;</ion-label>
+			 
+	  </ion-item>
+	
+	  <ion-item class="facebook" (click)="go_to_sos()">
+			<ion-label>&nbsp;Schedule of charges</ion-label>
+	
+	  </ion-item>
+	
+	  
+	
+	</ion-list>
+	
+	<div class="setting_heading">
+			<h3>Notification Setting</h3>
+	</div>
+	
+	<ion-list class="setting_heading_list">
+	
+	  <ion-item >
+			<ion-label>&nbsp;Keep Credential Save for auto Login </ion-label>
+			<ion-toggle [(ngModel)]="pepperoni2" ></ion-toggle>
+	  </ion-item>
+	  <ion-item class="logout"  >
+			<ion-label>&nbsp;Logout</ion-label>
+			  <button ion-button outline item-end (click)="logout1()" >
+			  <ion-icon name="power"></ion-icon>
+			  
+			</button>
+	  </ion-item>
+	
+	</ion-list>
+	
+	
+	
+	
+	
+	
+			
+	
+	
+   
+		
+	
+
+</ion-content>
+
+
+<ion-footer class="dashboard_footer">
+	
+	<div class="ion_toolbar2">
+		<div class="ion-tab">
+			<div class="tab" (click)="home()"><div><ion-icon name="md-home"></ion-icon><br><span class="tab_text">Home</span></div></div>
+			<div class="tab" (click)="paybill()"><div><ion-icon name="card"></ion-icon><br><span class="tab_text">Pay Bill</span></div></div>
+			
+			<div class="tab" (click)="enquiry()"><div><ion-icon name="md-help"></ion-icon><br><span class="tab_text">Enquiry</span></div></div>
+			<div class="tab" (click)="inbox()"><div><ion-icon name="mail"></ion-icon><br><span class="tab_text">Inbox</span></div></div>
+			
+		</div>
+	</div>
+	
+</ion-footer>
+
+

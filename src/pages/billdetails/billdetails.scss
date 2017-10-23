@@ -1,0 +1,125 @@
+
+page-billdetails {
+
+ion-content { background-image:none; background:#fff !important;}
+
+.scroll-content{ padding:10px !important;}
+
+/*----------------Main setting---------------------*/
+.toolbar-background{ background-color:transparent;}
+.toolbar{ color:#fff; align-items:unset;}
+.toolbar-title-md{ font-family: open sans; font-weight: bold; font-size: 14px; padding-left: 10px; padding-top: 15px;}
+.dashboard_head::after{background-image:none;}
+
+.dashboard_head ion-icon{ color:#fff;}
+.dashboard_head ion-title{text-align:center;}
+.dashboard_head .toolbar-md{min-height:50px; background-image:url('../img/header_bg.jpg') !important;}
+
+
+.dashboard_head  ion-buttons{ margin-top:5px;}
+.dashboard_head  ion-buttons button{ font-size:1.2rem;} 
+.dashboard_head  button ion-icon{margin-right:0px;}
+
+.back-button-md{ margin-right:0px; margin-left:0px; margin-top:5px;}
+.back-button-icon-md{padding:0px;}
+
+.account_name h2 {
+    color: #a5a5a5;
+    font-family: Open Sans;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem !important;
+    text-align: center;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+*{color:#606064}
+
+
+
+.list_item_shadow{}
+
+.list_item_bg *{ background-color:#0084D6;}
+.list_item_bg *{ color:#fff;}
+
+
+.dash_list .mylist_arrow{ width:4%; float:left; padding-top:5px; text-align:right;}
+
+.dash_list .mylist_heading .strong{ font-weight:bold; font-size: 12px; padding-top:5px; font-size:3vw;}
+.dash_list .mylist_heading .desc{  font-size:10px; font-size:2.7vw;}
+
+.dash_list .mylist_arrow img{ max-width:unset; width:13px;}
+.dash_list .mylist_heading{ width:50%; min-width:120px; float:left; }
+
+
+.dash_list .mylist_heading2{ width:16%; min-width:65px; float:left; }
+.dash_list .mylist_heading2 .strong{ font-weight:bold; font-size: 12px; padding-top:5px; font-size:3vw;}
+.dash_list .mylist_heading2 .desc{  font-size:10px; font-size:2.7vw;}
+
+.dash_list .dashboard_icon_list button{ background-color:red; display:block;}
+
+
+.left_icon1{ width:25px; float:left; margin-top:0px; margin-left:10px;}
+.center_cont{ width:100px; float:left; color:#21232e; font-size:13px; margin-top:5px; margin-left:10px; text-align:left;}
+.right_icon1{ width:20px; float:left}
+
+.label-md{ margin-top:0px;}
+.item-md{ padding-left:0px !important; }
+.hide_item{ display:none;}
+
+
+
+.account_buttons{ max-width:320px; margin:0 auto; text-align:center; margin-top:20px;}
+.account_buttons button{  font-size:11px; margin-right:0px;  padding: 15px 2em; font-weight:bold ;  text-transform:unset;}
+.account_buttons button ion-icon{margin-right:0px; }
+.account_buttons .current_bill{ }
+
+.main_detail_bill{ text-align:center;}
+.main_detail_bill h4{ font-weight:bold; font-family: Open Sans; color:#A5A5A5; margin-top:0.7rem !important; }
+
+.main_detail_bill span{font-family: Open Sans; font-size:12px; color:#a5a5a5;}
+
+.main_detail_bill h2{ font-weight:lighter; font-family: Open Sans; color:#091d2e; font-size:26px; margin-top:0.7rem !important; }
+
+
+.bottom_heading{ font-weight:lighter; font-family: Open Sans; color:#091d2e; font-size:26px;  margin-top:0.9rem !important; text-align:center;}
+.bottom_img{ text-align:center;}
+.bottom_img img{ max-width:160px;}
+
+
+
+.mylist_canvas{ width:96%; float:left;}
+.list_item .item-inner{ border-bottom:unset; border:1px solid #ccc; padding:15px 10px;}
+
+
+.mygrid{ margin-top:0px;}
+.mygrid .row{ padding:5px; border-bottom:1px solid #ccc; }
+.mygrid .row .col{ text-align:left; font-size:0.8em;}
+
+.ion-md-more::before{ font-size:24px; color:#ccc;}
+
+.heading_main { padding:15px; overflow:hidden; }
+.heading_main .sub1{ width:97%; float:left;color:#A5A5A9}
+.heading_main .sub2{ width:3%;float:left}
+.clear{ clear:both;}
+.color_red{ color:#fa9292; font-size:16px}
+.color_green{ color:#3bdd09;}
+.button-md{ padding:15px 2.1em; text-transform:unset; margin:0 auto;}
+.pay_bill .button-inner{ color:#000;}
+.view_inv .button-inner{ color:#000;}
+
+.color_red{color:red;}
+.text_center{ text-align:center !important; }
+
+
+}
+
+.ion_toolbar2{ min-height:75px; background-color:blue;}
+.ion_toolbar2 .ion-tab .tab{ width:25%; min-height:75px; background-image:url('../img/bottom_tab_bg.jpg'); background-size:cover;   float:left;}
+.ion_toolbar2 .ion-tab .tab div{padding:15px; text-align:center; }
+.ion_toolbar2 .ion-tab .tab div .tab_text{font-weight:bold; font-size:14px; color:#fff !important;}
+.ion_toolbar2 .ion-tab .tab div ion-icon{ font-size:24px; color:#fff !important;}
+

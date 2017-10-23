@@ -1,0 +1,85 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title class="text-center" >Profile Utility</ion-title>
+   
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+	
+
+	
+	<!--<div class="account_buttons">
+	   	<button ion-button round class="button1" color="light" (click)="unit_detail();"> Unit Detail &nbsp;<ion-icon ios="ios-arrow-down" name="ios-arrow-down"></ion-icon>  </button>
+	  
+	  	<button ion-button round class="button1" (click)="meter_history();" >Meter history &nbsp;<ion-icon ios="ios-arrow-up" name="ios-arrow-up"></ion-icon> </button>
+	</div>
+	-->
+	
+	<div class="account_name">
+		<h2>{{this.customerdata.CUSTNAME}}</h2>
+		<!--<h5>Pay Bill:<span class="color_red">12345667889</span></h5>-->
+		
+	</div>
+	
+	
+	
+ 	<ion-list class="dash_list"  *ngFor="let data of result1; let i = index">
+			
+			 <ion-item  class="list_item list_item_shadow arrow-dropright color1 main_{{data.$id}}" >
+				
+				<div class="mylist_canvas">
+					<div class="mylist_heading "> 
+						<div class="strong"> Account No: {{data.AccountNo}}</div>
+						<div class="desc">Reading Date: {{data.InitialMeterReadingDate | date:"dd/MM/yyyy"}}</div>
+					</div> 
+					<div class="mylist_heading"> 
+						<div class="strong">Meter No: {{data.MeterNo}}  </div>
+						<div class="desc"> Meter Reading: {{data.InitialMeterReading}}</div>
+					</div> 
+				</div>
+				
+				<div class="mylist_arrow"> 
+					 <ion-icon ios="ios-more" md="md-more"></ion-icon>
+				</div>
+				
+																
+			</ion-item>
+			 
+			 
+
+		
+		
+		
+	
+		
+		
+	</ion-list>
+	
+	
+  
+  
+  
+  
+  
+</ion-content>
+<ion-footer class="dashboard_footer">
+	
+	<div class="ion_toolbar2">
+		<div class="ion-tab">
+			<div class="tab" (click)="home()"><div><ion-icon name="md-home"></ion-icon><br><span class="tab_text">Home</span></div></div>
+			<div class="tab" (click)="paybill()"><div><ion-icon name="card"></ion-icon><br><span class="tab_text">Pay Bill</span></div></div>
+			
+			<div class="tab" (click)="enquiry()"><div><ion-icon name="md-help"></ion-icon><br><span class="tab_text">Enquiry</span></div></div>
+			<div class="tab" (click)="inbox()"><div><ion-icon name="mail"></ion-icon><br><span class="tab_text">Inbox</span></div></div>
+			
+		</div>
+	</div>
+	
+</ion-footer>

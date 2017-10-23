@@ -1,0 +1,146 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title class="text-center" >Profile History</ion-title>
+    <ion-buttons right>
+      
+    </ion-buttons>
+  </ion-navbar>
+  	
+	<div class="account_buttons">
+	
+		<div class="button "  (click)="goto_profile();">
+			Account Profile 
+		</div>
+		<div class="button " (click)="goto_unit();">
+			Unit Details
+		</div>
+		<div class="button current last" (click)="goto_history();">
+			Account History
+		</div>
+	
+	</div>
+	
+  
+</ion-header>
+
+<ion-content padding>
+  
+
+	
+	<!--<div class="account_buttons">
+	   	<button ion-button round class="button1" color="light" (click)="unit_detail();"> Unit Detail &nbsp;<ion-icon ios="ios-arrow-down" name="ios-arrow-down"></ion-icon>  </button>
+	  
+	  	<button ion-button round class="button1" (click)="meter_history();" >Meter history &nbsp;<ion-icon ios="ios-arrow-up" name="ios-arrow-up"></ion-icon> </button>
+	</div>
+	-->
+	
+	<div class="account_name">
+		<h2>{{this.customerdata.CUSTNAME}}</h2>
+	</div>
+	
+	
+	
+ 	<ion-list class="dash_list"  *ngFor="let data of result1; let i = index">
+	
+	
+			<!--<ion-item  class="list_item arrow-dropright color1" (click)="view_details(data.ID);" >
+				<div class="mylist_heading first1"> 
+					<div class="strong">Account Number</div>
+					<div class="desc">{{data.AccountNo}}</div>
+				</div> 
+				<div class="mylist_heading"> 
+					<div class="strong">CustomerID</div>
+					<div class="desc"> {{data.CustomerID}}</div>
+				</div> 
+				<div class="mylist_heading"> 
+					<div class="strong">CustomerTypeName</div>
+					<div class="desc">{{data.CustomerTypeName}}</div>
+				</div> 
+				<div class="mylist_arrow"> 
+					<ion-icon name="arrow-dropright1" item-right><img src="./img/list-arrow3.png"></ion-icon>
+				</div>
+				
+																
+			</ion-item>-->
+			
+			<ion-item  class="list_item list_item_shadow arrow-dropright color1 main_{{data.$id}}" (click)="view_details(data.$id);"  >
+				
+				<div class="mylist_canvas">
+					<div class="mylist_heading "> 
+						<div class="strong"> Account No: {{data.AccountNumber}}</div>
+						<div class="desc">Amount Bill: {{data.AmountBilled}}</div>
+					</div> 
+					<div class="mylist_heading"> 
+						<div class="strong">Invoice #: {{data.InvoiceNo}}  </div>
+						<div class="desc"> Date: {{data.TransactionDate | date: "dd/MM/yyyy"}}</div>
+					</div> 
+				</div>
+				
+				<div class="mylist_arrow"> 
+					 <ion-icon ios="ios-more" md="md-more"></ion-icon>
+				</div>
+				
+																
+			</ion-item>
+			 
+			 
+			 
+		<ion-item class="no_bg hide_item item_{{data.$id}}" >
+			<ion-grid class="mygrid">
+				<ion-row text-center>
+					<ion-col><b>Amount Paid (AED): </b></ion-col>
+					<ion-col>{{data.AmountPaid}} </ion-col>
+				</ion-row>
+			
+				
+				<ion-row text-center>
+					<ion-col><b>Date:</b></ion-col>
+					<ion-col>{{data.TransactionDate | date:"dd/MM/yyyy"}} </ion-col>
+				</ion-row>
+				<ion-row text-center>
+					<ion-col><b>Service Paid Amount(AED): </b></ion-col>
+					<ion-col>{{data.ServicePaidAmount}} </ion-col>
+				</ion-row>
+			
+				<ion-row text-center>
+					<ion-col><b>Transcation Details </b></ion-col>
+					<ion-col>{{data.PaymentDetails}} </ion-col>
+				</ion-row>
+				
+				<ion-row text-center>
+					<ion-col><b>Update By </b></ion-col>
+					<ion-col>{{data.Userid}} </ion-col>
+				</ion-row>
+				
+				<ion-row text-center>
+					<ion-col><b>Comments </b></ion-col>
+					<ion-col>{{data.Comments}} </ion-col>
+				</ion-row>
+				
+				
+				
+			</ion-grid>
+		</ion-item>
+	</ion-list>
+	
+  
+</ion-content>
+<ion-footer class="dashboard_footer">
+	
+	<div class="ion_toolbar2">
+		<div class="ion-tab">
+			<div class="tab" (click)="home()"><div><ion-icon name="md-home"></ion-icon><br><span class="tab_text">Home</span></div></div>
+			<div class="tab" (click)="paybill()"><div><ion-icon name="card"></ion-icon><br><span class="tab_text">Pay Bill</span></div></div>
+			
+			<div class="tab" (click)="enquiry()"><div><ion-icon name="md-help"></ion-icon><br><span class="tab_text">Enquiry</span></div></div>
+			<div class="tab" (click)="inbox()"><div><ion-icon name="mail"></ion-icon><br><span class="tab_text">Inbox</span></div></div>
+			
+		</div>
+	</div>
+	
+</ion-footer>

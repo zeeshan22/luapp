@@ -1,0 +1,42 @@
+page-contactus{
+*{padding:0px; margin:0px; }
+ion-content { background-image:none; background:#fff !important;}
+/*---------- -- headrer Setting-------------*/
+.dashboard_head ion-icon{ color:#fff;}
+.dashboard_head ion-title{text-align:center;}
+.dashboard_head .toolbar-md{min-height:50px; background-image:url('../img/header_bg.jpg') !important;}
+
+
+.dashboard_head  ion-buttons{ margin-top:5px;}
+.dashboard_head  ion-buttons button{ font-size:1.2rem;} 
+.dashboard_head  button ion-icon{margin-right:0px;}
+
+.back-button-md{ margin-right:0px; margin-left:0px; margin-top:5px;}
+.back-button-icon-md{padding:0px;}
+
+.toolbar-background{ background-color:transparent;}
+.toolbar{ color:#fff; align-items:unset;}
+.toolbar-title-md{ font-family: open sans; font-weight: bold; font-size: 14px; padding-left:0px; padding-top: 12px;}
+.dashboard_head::after{background-image:none;}
+
+
+
+.account_buttons{ max-width:100%; }
+.account_buttons .button{ width:33.1%; float:left; font-size:3vw;padding: 15px 1.2em; font-weight:bold; text-transform:unset; background:#F5FAFD; border-right:1px solid #CEDCE5; color:#000; border-bottom:5px solid #E4E4E4}
+.account_buttons .last{border-right:0px;}
+.current{color:#0084D7 !important; border-bottom:5px solid #0084D7 !important}
+
+	
+
+
+	.holds-the-iframe{
+	  background:url(../img/loader.gif) center center no-repeat;
+	}
+}
+
+
+.ion_toolbar2{ min-height:75px; background-color:blue;}
+.ion_toolbar2 .ion-tab .tab{ width:25%; min-height:75px; background-image:url('../img/bottom_tab_bg.jpg'); background-size:cover; color:#fff !important;  float:left;}
+.ion_toolbar2 .ion-tab .tab div{padding:15px; text-align:center; }
+.ion_toolbar2 .ion-tab .tab div .tab_text{font-weight:bold; font-size:14px;}
+.ion_toolbar2 .ion-tab .tab div ion-icon{ font-size:24px;}

@@ -1,0 +1,220 @@
+<ion-header class="signup_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title class="text-center" >Signup</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only></button>
+    </ion-buttons>
+	<div class="main_logo">
+		<img src="img/singup_icon_mian.png">
+	</div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	
+
+<form (ngSubmit)="signup()">
+	<ion-list class="singup_list new_color">
+	
+	
+		
+		<ion-item class="select_group set_select_group">
+		  <ion-label  color="primary" stacked > Title  </ion-label>
+		  
+		  <ion-select multiple="false" name="title" [(ngModel)]="title">
+		  		
+				<ion-option value="0"> Title</ion-option>
+				<ion-option value="Mr.">Mr.</ion-option>
+				<ion-option value="Mrs.">Mrs.</ion-option>
+				<ion-option value="Ms.">Ms.</ion-option>
+				<ion-option value="Miss">Miss</ion-option>
+				<ion-option value="Eng.">Eng.</ion-option>
+				<ion-option value="Dr.">Dr.</ion-option>
+				<ion-option value="Prof.">Prof.</ion-option>
+				<ion-option value="Sheikh">Sheikh</ion-option>
+				<ion-option value="Sheikha">Sheikha</ion-option>
+
+			
+		  	</ion-select>
+		  
+		  
+		  
+		  
+		</ion-item>
+	
+		<ion-item>
+			<ion-label color="primary" stacked   >Your Name:</ion-label>
+			<ion-input placeholder="Your Name" name="custName"  [(ngModel)]="custName"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked   >Your Email:</ion-label>
+			<ion-input placeholder="Your Email" name="email" [(ngModel)]="email" ></ion-input>
+		</ion-item>
+		
+		<ion-item class="phone_item">
+			<ion-label  > Phone:</ion-label>
+		</ion-item>
+		<ion-item class="select_group2 phone_bottom ">
+		   
+		  	  
+			  <ion-select multiple="false" name="countryCode" [(ngModel)]="countryCode">
+					<ion-option value='971' selected>971</ion-option>
+
+				
+			  </ion-select>
+			  <ion-select multiple="false" name="mobileCode" [(ngModel)]="mobileCode" >
+				<ion-option value="0" disabled  selected>Code</ion-option>
+				<ion-option value="50">050</ion-option>
+				<ion-option value="52">052</ion-option>
+				<ion-option value="54">054</ion-option>
+				<ion-option value="55">055</ion-option>
+				<ion-option value="56">056</ion-option>
+				<ion-option value="58">058</ion-option>
+			  </ion-select>
+			  <ion-input  name="contactNo" [(ngModel)]="contactNo" placeholder="ContactNo">
+				
+			  </ion-input>
+		
+		  
+		  
+		  
+		  
+		</ion-item>
+		
+		
+				
+		<ion-item class="select_group set_select_group">
+		  	<ion-label color="primary" stacked >Gender:</ion-label>
+			<ion-select multiple="false" name="gender" [(ngModel)]="gender">
+		  		<ion-option value='0' selected>Select Gender</ion-option>
+				<ion-option value='1' >Male</ion-option>
+				<ion-option value='2' >Gender</ion-option>
+			
+		  	</ion-select>
+		</ion-item>
+		
+		
+		<ion-item>
+			<ion-label color="primary" stacked   >Address:</ion-label>
+			<ion-input placeholder="Address" name="address"  [(ngModel)]="address"></ion-input>
+		</ion-item>
+		
+		<ion-item class="select_group set_select_group">
+		  <ion-label color="primary" stacked  >Select Country:</ion-label>
+		  
+		  	
+			<ion-select multiple="false" name="country" [(ngModel)]="country">
+		  		<ion-option value='0' selected>Select Country:</ion-option>
+				<ion-option *ngFor="let data of countries; let i = index" value="{{data.ID}}">{{data.Name}}</ion-option>
+			
+		  	</ion-select>
+		  
+		  
+		  
+		  
+		</ion-item>
+		
+		
+		<ion-item class="select_group set_select_group">
+		    
+			<ion-label color="primary" stacked  > Select Nationality:</ion-label> 
+		    <ion-select multiple="false" name="nationality" [(ngModel)]="nationality">
+		  		<ion-option value='0' selected>Select Nationality</ion-option>
+				<ion-option *ngFor="let data of countries; let i = index" value="{{data.ID}}">{{data.Name}}</ion-option>
+			
+		  	</ion-select>
+		  
+		</ion-item>
+		
+		<ion-item>
+			<ion-label color="primary" stacked   >City:</ion-label>
+			<ion-input placeholder="City" name="city"  [(ngModel)]="city"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked   > Tower:</ion-label>
+			<ion-input placeholder="Tower" name="towerNamee"  [(ngModel)]="towerNamee"></ion-input>
+			
+		</ion-item>
+		
+		<ion-item>
+			<ion-label color="primary" stacked   > Unit:</ion-label>
+			<ion-input placeholder="Unit" name="Unit"  [(ngModel)]="Unit"></ion-input>
+			
+		</ion-item>
+		<ion-item class="select_group set_select_group">
+			   	<ion-label color="primary" stacked  >Unit Type</ion-label>
+			  	
+				<ion-select multiple="false" name="UnitType" [(ngModel)]="UnitType">
+					<ion-option value='0' selected>Unit Type</ion-option>
+					<ion-option value="1">Residential</ion-option>
+					<ion-option value="2">Commercial–offices</ion-option>
+					<ion-option value="3">Retails</ion-option>
+				
+				</ion-select>
+			 
+		  
+		  
+		  
+		</ion-item>
+		<ion-item class="select_group set_select_group">
+			  <ion-label color="primary" stacked > Customer Type </ion-label>
+			  <ion-select multiple="false" name="customerType" [(ngModel)]="customerType">
+					<ion-option value='0' selected>Customer Type</ion-option>
+					<ion-option value="1">Owner </ion-option>
+					<ion-option value="2">Tenant</ion-option>
+					<ion-option value="3">Tenant / Owner</ion-option>
+				
+				</ion-select>
+			  
+		  
+		  
+		  
+		</ion-item>
+		<ion-item class="select_group  set_select_group">
+				 <ion-label color="primary" stacked > Acccount Type</ion-label>
+				
+				<ion-select multiple="false" name="customerTypeId" [(ngModel)]="customerTypeId">
+					<ion-option value='0' selected>Acccount Type</ion-option>
+					<ion-option value="1">Single Unit </ion-option>
+					<ion-option value="2">Multi Unit</ion-option>
+				</ion-select>
+			  
+		  
+		  
+		  
+		</ion-item>
+		
+		
+
+		 <ion-item class="agree_checkbox">
+			<ion-label>Please accept <a (click)="term_and_condition_page()">terms and conditions</a></ion-label>
+			<ion-checkbox  name="tosselect"[(ngModel)]="tosselect"></ion-checkbox>
+			<!--		<ion-toggle [(ngModel)]="tosselect" ></ion-toggle>-->
+		  </ion-item>
+		
+		
+			<!--	(click)="term_and_condition_page()"-->
+		
+		
+		
+	</ion-list>
+	<button color="gib1"  type="submit" block ion-button class="button button-block button-positive signup_button">Sign Up</button>
+
+  
+
+
+
+</form>
+  
+
+
+
+</ion-content>

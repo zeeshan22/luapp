@@ -1,0 +1,84 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title class="text-center" >Profile update</ion-title>
+    <ion-buttons right>
+      
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	
+
+<form (ngSubmit)="submit_req()">
+	<ion-list class="singup_list">
+	
+	      
+		  
+		<ion-input placeholder="" name="CustomerID"  [(ngModel)]="CustomerID" class="displaynone"></ion-input>
+		
+		
+		<ion-item>
+			<ion-label color="primary" stacked > Email: </ion-label>
+			<ion-input placeholder="Email Address" name="EMAIL"  [(ngModel)]="EMAIL"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary"  stacked > Secondary Email:</ion-label>
+			<ion-input placeholder="Secondary Email" name="SecondaryEmail"  [(ngModel)]="SecondaryEmail"></ion-input>
+			
+		</ion-item>
+		
+		
+		<ion-item>
+			<ion-label color="primary"  stacked >Mobile:</ion-label>
+			<ion-input placeholder="Mobile" name="PHONE"  [(ngModel)]="PHONE"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary"  stacked >Telephone:</ion-label>
+			<ion-input placeholder="Telephone" name="PHONE2"  [(ngModel)]="PHONE2"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary"  stacked >New Password:</ion-label>
+			<ion-input type="password"  placeholder="New Password" name="Password"  [(ngModel)]="Password"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary"  stacked >Repeat Password:</ion-label>
+			<ion-input type="password" placeholder="Repeat Password" name="rePassword"  [(ngModel)]="rePassword"></ion-input>
+			
+		</ion-item>
+		
+		
+		
+		
+		
+		
+		
+	</ion-list>
+	<button color="gib1"  type="submit" block ion-button class="button button-block button-positive signup_button dark">Update</button>
+
+  
+
+
+
+</form>
+  
+
+
+
+</ion-content>
+
+
+
+
+

@@ -1,0 +1,251 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left> 
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title class="text-center" >View & Pay Bill </ion-title>
+    <!--<ion-buttons right>
+      <button ion-button icon-only><ion-icon name="md-search"></ion-icon></button>
+    </ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+	<div *ngIf="msg!=''" text-center class="new_message">
+		{{msg}}
+	</div>
+	<div class="heading_main">
+		<div class="sub1">
+		
+		</div>
+		<div class="sub2">
+				<!--<ion-icon ios="ios-funnel" md="ios-funnel"></ion-icon>-->
+		</div>
+	</div>
+ 	<div class="paybill_heading"> 
+		<strong class="bill_amount">Total Amount:</strong>
+		<span class="bill_amount_total" >0</span>
+		<button class="pay_button" ion-button (click)="paynow()">Pay Now</button>
+	</div>
+	
+ <div class="main_div clear"    >
+ 	
+	<ion-list>
+
+		<!--<a (click)="openWithCordovaBrowser('http://logicutilities.com/');">
+		aaaaaaaa
+		</a>
+		<a (click)="openWithInAppBrowser2('http://logicutilities.com/');">
+		bbbbbb
+		</a>-->
+		<!--<a (click)="openWithInAppBrowser('http://logicutilities.com/');">
+		cccccccccccc
+		</a>-->
+		<!--<a (click)="openWithSystemBrowser('http://logicutilities.com/');">
+		ddddddddd
+		</a>-->
+	</ion-list>
+	
+	<ion-list class="dash_list " *ngFor="let data of result1; let i = index"  >
+			
+			<ion-item class="list_item list_item_shadow " id="main222_{{data.$id}}" *ngIf="(i <= 12)"  >
+				<ion-avatar item-start class="flag_top_margintop_fix" id="main3_{{data.$id}}">
+					 
+					 <div class="mylist_flag_top word" *ngIf="data.Status=='Not Paid'" (click)="checkbox_click(data.$id);" >
+						
+						<div class="flag_img bg_red"> <img src="./img/pay.png" class="pay_img"> </div>
+						
+					</div>
+					<div class="mylist_flag_top word"   *ngIf="data.Status=='Paid'"  (click)="checkbox_click(data.$id);" >
+						
+						<div class="flag_img bg_green"><img src="./img/paid.png" class="pay_img"></div>  
+				
+						
+					</div>
+					<div class="mylist_flag_top word"   *ngIf="data.Status=='Partially Paid'"  (click)="checkbox_click(data.$id);" >
+						
+						<div class="flag_img bg_orange"><img src="./img/ppaid.png" class="pay_img"></div>  
+				
+						
+					</div>
+					
+					<div class="mylist_flag_top tick" *ngIf="data.Status=='Not Paid'"   (click)="checkbox_click(data.$id);" >
+						
+						
+						<div class="flag_img bg_red">  <img src="./img/pay_tick.png" class="pay_img"> </div>
+					</div>
+					<div class="mylist_flag_top tick" *ngIf="data.Status=='Paid'"   (click)="checkbox_click(data.$id);" >
+						
+						
+						<div class="flag_img bg_green">  <img src="./img/paid_tick.png" class="pay_img"> </div>
+					</div>
+					<div class="mylist_flag_top tick" *ngIf="data.Status=='Partially Paid'"   (click)="checkbox_click(data.$id);" >
+						
+						
+						<div class="flag_img bg_orange"> <img src="./img/ppaid_tick.png" class="pay_img"> </div>
+					</div>
+				
+				
+				
+				
+				</ion-avatar>
+				
+				<div class="mylist_heading" (click)="view_details(data.$id);"   > 
+					<div class="strong">Bill Date: {{data.BillDate | date: 'dd/MM/yyyy'}}</div>
+					<div class="desc">Account No: {{data.ACCTNUM}}</div>
+				</div> 
+				<div class="mylist_heading" (click)="view_details(data.$id);"  > 
+					<div class="strong">Invoice#: {{data.InvoiceNo}}</div>
+					<div class="desc"> Due Date: {{data.BillDueDate | date:"dd/MM/yyyy"}}</div>
+				</div> 
+				<div class="mylist_arrow" (click)="view_details(data.$id);" > 
+					 <ion-icon ios="ios-more" md="md-more"></ion-icon>
+				</div>
+				
+			</ion-item>
+			
+			<ion-item  class="list_item list_item_shadow arrow-dropright color1 " style="display:none;" >
+				
+				<div class="mylist_canvas ">
+				
+					
+					<div class="mylist_heading" (click)="view_details(data.$id);"   > 
+						<div class="strong"> Bill Date: {{data.BillDate | date: 'dd/MM/yyyy'}}</div>
+						<div class="desc">Account No: {{data.ACCTNUM}}</div>
+					</div> 
+					<div class="mylist_heading" (click)="view_details(data.$id);"  > 
+						<div class="strong">Invoice#: {{data.InvoiceNo}}</div>
+						<div class="desc"> Due Date: {{data.BillDueDate | date:"dd/MM/yyyy"}}</div>
+					</div> 
+				</div>
+				
+				
+																
+			</ion-item>
+			
+			<ion-item class="no_bg amount_hide_item amount_item_{{data.$id}}" *ngIf="(i <= 12)" >
+				<ion-grid class="mygrid">
+				
+					<ion-row text-center>
+						<ion-col class="pay_amount_padding"><b>Pay Amount: </b></ion-col>
+						<ion-col>
+						<input type="hidden" name="acctnum" class="acctnum" value="{{data.ACCTNUM}}">
+						<input type="hidden" name="myid" class="myid" value="{{data.$id}}">
+						<input type="hidden" name="building_name" class="building_name" value="{{data.TowerName}}">
+						<input type="hidden" name="unit_no" class="unit_no" value="{{data.Flatno}}">
+						<input type="hidden" name="unit_id" class="unit_id" value="{{data.UnitId}}">
+						<input type="hidden" name="month" class="month" value="{{data.BillMonth}}">
+						
+						
+						
+						
+						
+						<input type="hidden" name="customerid" class="customerid" value="{{data.CustomerID}}">
+						<input type="hidden" name="inv_no" class="inv_no" value="{{data.InvoiceNo}}">
+						<input type="number" class="bill_amount bill_amount_border" name="bill_amount[]" value="{{data.DueAmount}}" id="amount_{{data.$id}}" (keyup)="amount_keyup();"></ion-col>
+					</ion-row>
+				</ion-grid>
+				
+			</ion-item>
+			 
+			<ion-item class="no_bg hide_item item_{{data.$id}}" *ngIf="(i <= 12)" >
+				<ion-grid class="mygrid">
+					
+					
+				
+					<ion-row text-center>
+						<ion-col><b>Tower: </b></ion-col>
+						<ion-col>{{data.TowerName}}</ion-col>
+					</ion-row>
+					<ion-row text-center>
+						<ion-col><b>Unit#: </b></ion-col>
+						<ion-col>{{data.Flatno}}</ion-col>
+					</ion-row>
+				
+					
+					
+					<ion-row text-center>
+						<ion-col><b>Billing Month: </b></ion-col>
+						<ion-col>{{data.BillDueDate | date: 'MMMM'}}</ion-col>
+					</ion-row>
+					<ion-row text-center>
+						<ion-col><b>Service From: </b></ion-col>
+						<ion-col>{{data.BillFrom | date: 'dd/MM/yyyy'}}</ion-col>
+					</ion-row>
+					<ion-row text-center>
+						<ion-col><b>Service To: </b></ion-col>
+						<ion-col>{{data.BillTo | date: 'dd/MM/yyyy'}}</ion-col>
+					</ion-row>
+					<ion-row text-center>
+						<ion-col><b>Total Amount(AED): </b></ion-col>
+						<ion-col>{{data.BillAmount}}</ion-col>
+					</ion-row>
+				
+		
+				
+					<ion-row text-center>
+						<ion-col><b>Amount Paid(AED):</b></ion-col>
+						<ion-col>{{data.AmountPaid}}</ion-col>
+					</ion-row>
+					<ion-row text-center>
+						<ion-col><b>Due Amount(AED):</b></ion-col>
+						<ion-col ><span class="color_red">{{data.DueAmount}}</span></ion-col>
+					</ion-row>
+					
+					
+					
+					<ion-row text-center class="view_inv_button">
+						
+						
+						<div class="col-33">
+							<button href="#" ion-button  target="_blank" class="pay_bill"  (click)="pay_now_single(data.$id)" >Pay Now</button>
+						</div>
+						<div class="col-33">
+							
+								<button (click)="openWithInAppBrowser2(this.base_url+'ViewInvoice.aspx?InvoiceNo='+data.InvoiceNo+'&ACCTNUM='+data.ACCTNUM+'&BillDate='+data.BillDate+'&ViewBy=Cus')" ion-button  target="_blank" class="view_inv" color="light" >View Invoice</button>
+							
+						</div>
+						<div class="col-33">
+							<button (click)="bill_detail(data.ACCTNUM)"  ion-button  target="_blank" class="view_inv" color="light" >Invoice History</button>
+						</div>
+					</ion-row>
+					
+					
+				
+					
+				
+				</ion-grid>
+				
+				
+		 </ion-item>
+		
+		
+	</ion-list>
+	
+ </div>
+	<!--main loop div end-->
+  
+  
+  
+  
+  
+</ion-content>
+
+
+<ion-footer class="dashboard_footer">
+	
+	<div class="ion_toolbar2">
+		<div class="ion-tab">
+			<div class="tab" (click)="home()"><div><ion-icon name="md-home"></ion-icon><br><span class="tab_text">Home</span></div></div>
+			<div class="tab" (click)="paybill()"><div><ion-icon name="card"></ion-icon><br><span class="tab_text">Pay Bill</span></div></div>
+			
+			<div class="tab" (click)="enquiry()"><div><ion-icon name="md-help"></ion-icon><br><span class="tab_text">Enquiry</span></div></div>
+			<div class="tab" (click)="inbox()"><div><ion-icon name="mail"></ion-icon><br><span class="tab_text">Inbox</span></div></div>
+			
+		</div>
+	</div>
+	
+</ion-footer>

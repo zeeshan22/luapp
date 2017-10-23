@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="gib2">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title class="text-center logo-top"><img src="img/logo.png" alt="Your logo here"/></ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+<form (ngSubmit)="search()">
+<ion-item>
+    <ion-label fixed>Claim Track</ion-label>
+<ion-input type="text" id="ref" class="form-control"
+       required minlength="4" maxlength="24" 
+       name="ref" [(ngModel)]="ref"
+        ></ion-input>
+
+  </ion-item><button ion-button block color="gib2" type="submit">Search</button>
+</form>
+</ion-content>

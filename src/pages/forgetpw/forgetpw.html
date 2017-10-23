@@ -1,0 +1,63 @@
+
+
+
+<ion-content class="backgroud2">
+	<div class="main_container">
+		<div class="home_heading_1"><img src="./img/Logic_icon.png" style="width:250px;"></div>
+		<div class="home_heading_2"><h3>UTILITY MANAGMEMENT SOLUTIONS</h3></div>
+			
+		<div class="home_heading_44">
+			<div class="inner">
+				<h3>Forgot Your Password?</h3>
+				<p>
+					To reset your password type the full email address you used to sign up for <a >logicutilities.com</a> and we'll send you an e-mail to wal you through resetting your password
+				</p>
+			</div>
+		</div>
+	
+  
+
+		<form (ngSubmit)="forgetpassword()">
+		
+			<div class="login_cont">
+				<ion-list>
+					
+					  <ion-item>
+						<ion-label color="primary"><ion-icon ios="ios-person" md="md-person" class="icon_color"></ion-icon> </ion-label>
+						<ion-input type="text"  required minlength="4" maxlength="24" placeholder="Enter Your Login ID" name="emails2" [(ngModel)]='emails2' ></ion-input>
+					  </ion-item>
+					  
+	  
+				
+				</ion-list>
+				
+				
+		   </div>
+		   <button color="gib7"  type="submit" block ion-button class="signin_button"> Submit </button>
+		   
+		  	
+		</form>
+	</div>
+  
+</ion-content>
+
+<ion-footer class="login_footer1">
+  <ion-toolbar>
+  
+		
+		
+		<div class="footer_sub">
+			
+			<span class="new_reg2">Back To </span><a href="#" (click)="signinpage()" class="singin_with_dont2" >Signin</a>
+		</div>
+		
+	
+	
+  </ion-toolbar>
+</ion-footer>
+
+
+
+
+
+

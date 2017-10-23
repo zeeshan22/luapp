@@ -1,0 +1,165 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title >Profile</ion-title>
+    <ion-buttons right>
+      
+    </ion-buttons>
+  </ion-navbar>
+  
+  
+	<div class="account_buttons">
+	  
+	  	<div class="button current">
+			Account Profile 
+		</div>
+		<div class="button" (click)="goto_unit();">
+			Unit Details
+		</div>
+		<div class="button last" (click)="goto_history();">
+			Account History
+		</div>
+	  
+	
+	</div>
+</ion-header>
+
+<ion-content padding>
+
+	
+
+	<div class="account_name">
+		<h2>{{this.customerdata.CUSTNAME}}</h2>
+	</div>
+  	<ion-grid class="mygrid">
+		<!--	<ion-row text-center>
+			<ion-col><b>Tower Name: </b></ion-col>
+			<ion-col>{{this.customerdata.TowerName}}</ion-col>
+			</ion-row>
+			
+			
+			<ion-row text-center>
+			<ion-col><b>Unit/Apartment #: </b></ion-col>
+			<ion-col>{{this.customerdata.UnitId}}</ion-col>
+			</ion-row>-->
+			
+			<ion-row text-center>
+				<ion-col><b>Full Name:</b></ion-col>
+				<ion-col>
+					<span *ngIf="this.customerdata.CUSTNAME==''">N/A</span>
+					<span *ngIf="this.customerdata.CUSTNAME!=''">{{this.customerdata.CUSTNAME}}</span>
+				</ion-col>
+			</ion-row>
+			  
+			
+			<ion-row text-center>
+				<ion-col><b>Email:</b></ion-col>
+				<ion-col>
+					<span *ngIf="this.customerdata.EMAIL==''">N/A</span>
+					<span *ngIf="this.customerdata.EMAIL!=''">{{this.customerdata.EMAIL}}</span>
+				</ion-col>
+			</ion-row>
+			
+			<!--<ion-row text-center>
+				<ion-col><b>Login ID/Account #:</b></ion-col>
+				<ion-col>{{this.customerdata.LoginID}}</ion-col>
+			</ion-row>-->
+
+			
+
+			<ion-row text-center>
+				<ion-col><b>Secondary Email:</b></ion-col>
+				<ion-col>
+					<span *ngIf="this.customerdata.SecondaryEmail==''">N/A</span>
+					<span *ngIf="this.customerdata.SecondaryEmail!=''">{{this.customerdata.SecondaryEmail}}</span>
+					
+				</ion-col>
+			</ion-row>
+		
+			<ion-row text-center>
+				<ion-col><b>Mobile:</b></ion-col>
+				<ion-col>
+					<span *ngIf="this.customerdata.PHONE==''">N/A</span>
+					<span *ngIf="this.customerdata.PHONE!=''">{{this.customerdata.PHONE}}</span>
+					
+				</ion-col>
+			</ion-row>
+			
+			<ion-row text-center>
+				<ion-col><b>Telephone:</b></ion-col>
+				<ion-col>
+					<span *ngIf="this.customerdata.PHONE2==''">N/A</span>
+					<span *ngIf="this.customerdata.PHONE2!=''">{{this.customerdata.PHONE2}}</span>
+				
+				</ion-col>
+				
+			</ion-row>
+			
+			<ion-row text-center>
+				<ion-col><b>Address 1:</b></ion-col>
+				<ion-col>
+				
+					<span *ngIf="this.customerdata.ADDR1==''">N/A</span>
+					<span *ngIf="this.customerdata.ADDR1!=''">{{this.customerdata.ADDR1}}</span>
+				
+				</ion-col>
+			</ion-row>
+			
+
+			<ion-row text-center>
+				<ion-col><b>Address 2: </b></ion-col>
+				<ion-col>
+						<span *ngIf="this.customerdata.ADDR2==''">N/A</span>
+						<span *ngIf="this.customerdata.ADDR2!=''">{{this.customerdata.ADDR2}}</span>
+				</ion-col>
+			</ion-row>
+
+ 			<ion-row text-center>
+				<ion-col><b>City:</b></ion-col>
+				<ion-col>
+						<span *ngIf="this.customerdata.CITYSTATE==''">N/A</span>
+						<span *ngIf="this.customerdata.CITYSTATE!=''">{{this.customerdata.CITYSTATE}}</span>
+				</ion-col>
+			</ion-row>
+
+			<ion-row text-center>
+				<ion-col><b>Zip: </b></ion-col>
+				<ion-col>
+						<span *ngIf="this.customerdata.ZIPPOBOX==''">N/A</span>
+						<span *ngIf="this.customerdata.ZIPPOBOX!=''">{{this.customerdata.ZIPPOBOX}}</span>
+				</ion-col>
+			</ion-row>
+			<ion-row text-center>
+				<ion-col text-center>
+					<button ion-button   class="pay_bill"  (click)="goto_profileupdate()" >Profile Update</button>
+				</ion-col>
+				
+			</ion-row>
+			
+
+	  </ion-grid>
+
+
+</ion-content>
+
+
+<ion-footer class="dashboard_footer">
+	
+	<div class="ion_toolbar2">
+		<div class="ion-tab">
+			<div class="tab" (click)="home()"><div><ion-icon name="md-home"></ion-icon><br><span class="tab_text">Home</span></div></div>
+			<div class="tab" (click)="paybill()"><div><ion-icon name="card"></ion-icon><br><span class="tab_text">Pay Bill</span></div></div>
+			
+			<div class="tab" (click)="enquiry()"><div><ion-icon name="md-help"></ion-icon><br><span class="tab_text">Enquiry</span></div></div>
+			<div class="tab" (click)="inbox()"><div><ion-icon name="mail"></ion-icon><br><span class="tab_text">Inbox</span></div></div>
+			
+		</div>
+	</div>
+	
+</ion-footer>
+
+

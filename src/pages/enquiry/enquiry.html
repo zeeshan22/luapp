@@ -1,0 +1,167 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title >Enquiry</ion-title>
+    <ion-buttons right>
+      <!--<button ion-button icon-only><ion-icon name="search"></ion-icon></button>-->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+
+	<div class="inbox_heading">
+		<div class="sub1">
+			<b>All Enquiry	(Primary {{result1.length}})</b>
+			
+			
+		</div>
+		<div class="sub2" (click)="newcompose();">
+			
+			<button ion-button >
+			  <ion-icon name="ios-create"></ion-icon>
+			  Create New
+			</button>
+		</div>
+	</div>
+	<div>
+		<b >&nbsp;&nbsp;Filters</b>
+	</div>
+	<div class="inbox_heading">
+		
+			
+			<ion-item class="select_group">
+			   <ion-label>  
+			  
+				
+						
+					<ion-select multiple="false" name="towerName" [(ngModel)]="towerName" class="select22">
+					
+						<ion-option value="{{customerdata.TowerName}}" selected>{{customerdata.TowerName}}</ion-option>
+					
+					</ion-select>
+				</ion-label>
+			</ion-item>
+			
+			<ion-item class="select_group">
+			   <ion-label>  
+			  
+				
+					<ion-select multiple="false" name="unitNo2" [(ngModel)]="unitNo2" (ionChange)="filter()" >
+						<ion-option value='{{loginid}}'  selected>All Account </ion-option>
+						
+						<span  *ngFor="let unit of units; let i = index">
+						
+							<ion-option  value="{{unit.flatno}}">{{unit.flatno}}</ion-option>
+						</span>
+					</ion-select>
+				</ion-label>
+			</ion-item>
+			
+			
+			
+			
+			
+			
+			
+	
+		
+	</div>
+	
+	
+	
+	
+	<div *ngIf="msg!=''" text-center class="new_message">
+		{{msg}}
+	</div>
+	<div *ngIf="result1.length==0"  class="no_record"> 
+		No record found, Please try again or contact support.
+	</div>	
+   <ion-list class="messages" *ngFor="let data of result1; let i = index" >
+	
+		<ion-item class="dashboard_intro list_item" id="main_{{data.ID}}"  (click)="view_details(data.ID)" > 
+			<ion-avatar item-start>
+				<div class="flag_img" *ngIf="data.Subject!=''" >
+					{{(data.Subject).substring(0,1)}}
+				</div>
+			</ion-avatar>
+			<div >
+				<div class="first_col22">
+					<h2>{{data.Subject}}</h2>
+					
+					<p>{{data.Message}} </p>
+				</div>
+				<div class="second_col">
+					<div class="text">{{data.SubmittedDate | date:"dd/MM/yyyy" }}</div>
+				
+					<!--<ion-icon class="star"  name="ios-star"></ion-icon>-->
+				</div>
+			</div>
+		</ion-item>
+		<ion-item class="dashboard_intro msg_details hide_item"  id="item_{{data.ID}}"  >
+		
+			<ion-grid class="mygrid">
+			
+				<ion-row text-center>
+					<ion-col class="first_col"><b>Ticket Number:</b> {{data.TrackingNumber }}</ion-col>
+					<!--<ion-col>{{data.TrackingNumber }}</ion-col>-->
+				</ion-row>
+				<ion-row text-center>
+					<ion-col class="first_col"><b>Tower: </b>{{data.TowerName }}</ion-col>
+					<!--<ion-col>{{data.TowerName }}</ion-col>-->
+				</ion-row>
+				<ion-row text-center>
+					<ion-col class="first_col"><b>Subject:</b> {{data.Subject }}</ion-col>
+					<!--<ion-col>{{data.Subject }}</ion-col>-->
+				</ion-row>
+				<ion-row text-center>
+					<ion-col class="first_col"><b>Message: </b>
+					<div [innerHTML]="data.Message"></div></ion-col>
+					
+				</ion-row>
+				
+				<ion-row text-center>
+					<ion-col class="first_col"><b>Submitted Date: </b>{{data.SubmittedDate | date:"dd/MM/yyyy" }}</ion-col>
+					<!--<ion-col>{{data.SubmittedDate | date:"dd/MM/yyyy" }}</ion-col>-->
+				</ion-row>
+				<ion-row text-center>
+					<ion-col class="first_col"><b>Status: </b>{{data.EnquiryStatus }}</ion-col>
+					<!--<ion-col>{{data.EnquiryStatus }}</ion-col>-->
+				</ion-row>
+				
+			</ion-grid> 
+			
+			
+			
+			
+			
+		</ion-item>
+		
+		
+
+	</ion-list>
+		
+	
+
+</ion-content>
+
+<ion-footer class="dashboard_footer">
+	
+	<div class="ion_toolbar2">
+		<div class="ion-tab">
+			<div class="tab" (click)="home()"><div><ion-icon name="md-home"></ion-icon><br><span class="tab_text">Home</span></div></div>
+			<div class="tab" (click)="paybill()"><div><ion-icon name="card"></ion-icon><br><span class="tab_text">Pay Bill</span></div></div>
+			
+			<div class="tab" (click)="enquiry()"><div><ion-icon name="md-help"></ion-icon><br><span class="tab_text">Enquiry</span></div></div>
+			<div class="tab" (click)="inbox()"><div><ion-icon name="mail"></ion-icon><br><span class="tab_text">Inbox</span></div></div>
+			
+		</div>
+	</div>
+	
+</ion-footer>

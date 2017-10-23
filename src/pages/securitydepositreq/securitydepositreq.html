@@ -1,0 +1,137 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title class="text-center" >Security Deposit  Request</ion-title>
+    <ion-buttons right>
+   <!--   <button ion-button icon-only><ion-icon name="md-search"></ion-icon></button>-->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	
+
+<form (ngSubmit)="submit_req()">
+	<ion-list class="singup_list">
+	
+	      
+		  
+		  <ion-input placeholder="" name="customerid"  [(ngModel)]="customerid" class="displaynone"></ion-input>
+		<ion-item>
+			<ion-label color="primary" stacked >Tower Name:</ion-label>
+			<ion-input placeholder="Tower name" name="towername"  [(ngModel)]="towername"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary"  stacked >Unit No:</ion-label>
+			<ion-input placeholder="Unit No" name="unitno"  [(ngModel)]="unitno"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked>Account ID:</ion-label>
+			<ion-input placeholder="Account ID" name="accountid"  [(ngModel)]="accountid"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Full Name:</ion-label>
+			<ion-input placeholder="Full Name" name="fullname"  [(ngModel)]="fullname"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Email Address:</ion-label>
+			<ion-input placeholder="Email Address" name="email"  [(ngModel)]="email"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Contact No:</ion-label>
+			<ion-input placeholder="Contact No" name="contactno"  [(ngModel)]="contactno"></ion-input>
+			
+		</ion-item>
+		
+			
+		
+		<ion-item>
+
+			<ion-label color="primary" stacked >Requested Date:</ion-label>
+			<ion-datetime displayFormat="DD/MM/YYYY" placeholder="Requested Date" name="requested_date"  [(ngModel)]="requested_date"></ion-datetime>
+			
+		</ion-item>
+		
+		
+		    
+		
+		<ion-item>
+			<ion-label color="primary" stacked >Account Name:</ion-label>
+			<ion-input placeholder="Account Name:" name="bankAccountName"  [(ngModel)]="bankAccountName"></ion-input>
+			
+		</ion-item>
+		
+		
+		<ion-item>
+			<ion-label color="primary" stacked >Account Number:</ion-label>
+			<ion-input placeholder="Account Number:" name="bankAccountNumber"  [(ngModel)]="bankAccountNumber"></ion-input>
+			
+		</ion-item>
+		
+		<ion-item>
+			<ion-label color="primary" stacked >Bank Name:</ion-label>
+			<ion-input placeholder="Bank Name:" name="bankName"  [(ngModel)]="bankName"></ion-input>
+			
+		</ion-item>
+		
+		<ion-item>
+			<ion-label color="primary" stacked >IBAN Number:</ion-label>
+			<ion-input placeholder="IBAN Number:" name="ibanNumber"  [(ngModel)]="ibanNumber"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Swift Code:</ion-label>
+			<ion-input placeholder="Swift Code:" name="swiftCode"  [(ngModel)]="swiftCode"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Country:</ion-label>
+			<ion-input placeholder="Country:" name="country"  [(ngModel)]="country"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >City:</ion-label>
+			<ion-input placeholder="City:" name="city"  [(ngModel)]="city"></ion-input>
+			
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" stacked >Remarks:</ion-label>
+			<ion-input placeholder="Remarks:" name="remarks"  [(ngModel)]="remarks"></ion-input>
+			
+		</ion-item>
+		
+		
+		
+		
+		
+	</ion-list>
+	<ion-input type="hidden" placeholder="Noc Fee" name="temp_noc_fee"  [(ngModel)]="temp_noc_fee" ></ion-input>
+	
+	<button color="gib1"  type="submit" block ion-button class="button button-block button-positive signup_button dark">Submit</button>
+
+  
+
+
+
+</form>
+  
+
+
+
+</ion-content>
+
+
+
+
+

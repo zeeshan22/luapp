@@ -1,0 +1,14 @@
+page-locateus {}
+.map_wrapper {
+    height: 400px;
+	 width: 100%;
+	 margin-top:25px;
+	
+}
+.clearfix2{ clear:both}
+
+.ion_toolbar2{ min-height:75px; background-color:blue;}
+.ion_toolbar2 .ion-tab .tab{ width:25%; min-height:75px; background-image:url('../img/bottom_tab_bg.jpg'); background-size:cover; color:#fff !important;  float:left;}
+.ion_toolbar2 .ion-tab .tab div{padding:15px; text-align:center; }
+.ion_toolbar2 .ion-tab .tab div .tab_text{font-weight:bold; font-size:14px;}
+.ion_toolbar2 .ion-tab .tab div ion-icon{ font-size:24px;}

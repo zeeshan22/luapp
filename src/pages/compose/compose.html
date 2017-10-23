@@ -1,0 +1,95 @@
+<ion-header class="dashboard_head">
+  <ion-navbar >
+    <ion-buttons left>
+        <button ion-button icon-only>
+          
+        </button>
+    </ion-buttons>
+    <ion-title >Compose</ion-title>
+    <ion-buttons right>
+     
+	<!--   <button ion-button icon-only><ion-icon ios="md-more" md="md-more"></ion-icon></button>-->
+	    
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<form (ngSubmit)="send2()">
+	<ion-list class="singup_list">
+		
+		<ion-item class="select_group">
+		  <ion-label>  
+		  
+			<span class="label22">Tower Name</span>
+			<ion-select multiple="false" name="towerName" [(ngModel)]="towerName" class="select22">
+		  	
+				<ion-option value="{{customerdata.TowerName}}" selected>{{customerdata.TowerName}}</ion-option>
+			
+		  	</ion-select>
+		  </ion-label>
+		</ion-item>
+
+		<ion-item class="select_group">
+		  <ion-label>  
+		  
+		  	
+			<span class="label22">Unit#</span>
+			<ion-select multiple="false" name="unitNo" [(ngModel)]="unitNo" class="select22">
+		  		<ion-option value='0' selected>Select Unit </ion-option>
+				
+				
+				
+				<ion-option *ngFor="let unit of units; let i = index" value="{{unit.AccountNo}}">{{unit.flatno}}</ion-option>
+			
+		  	</ion-select>
+		  </ion-label>
+		</ion-item>
+		
+		
+	
+		
+		<ion-item>
+			<ion-label color="primary" > Enter Subject</ion-label>
+			<ion-input placeholder=""  name="subject" [(ngModel)]="subject" ></ion-input>
+		</ion-item>
+		
+		
+		
+		<ion-item>
+			<ion-label color="primary" > Enter Message </ion-label>
+			<ion-textarea placeholder=""  name="message" [(ngModel)]="message"></ion-textarea>
+		</ion-item>
+		
+		<ion-item>
+				<!--	 <button ion-button icon-only>	Attach File<ion-icon name="attach"></ion-icon></button>-->
+					 <ion-col>
+					   <button ion-button class="submit_button" > Submit</button>
+					</ion-col>
+		</ion-item>
+		
+		
+
+		
+		
+		
+	</ion-list>
+	
+	
+
+  
+
+
+</form>
+	
+	
+	
+   
+		
+	
+
+</ion-content>
+
+
+
