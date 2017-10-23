@@ -14,3 +14,86 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+
+button ion-icon { margin-right:10px; }
+
+ion-content{
+   
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-color: #fff!important;
+	}
+
+	.button-md {padding: 20px 1.1em; margin-bottom: 8px;}
+
+	.btmspace { display: block; height: 20px; }
+	
+a { text-decoration: none; color: #000;}
+
+h3 {font-size: 22px;}
+
+h4 {font-size: 18px;}
+
+.side_heading{font-size:24px !important; }
+
+
+.side_bar_head{ background-color: #fff !important; min-height:40px; padding:25px 0px 5px 0px;   border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important; background-size: 100% 0px; height: 45px; }
+.side_bar_head img{ max-height:65px;}
+.side_bar_head .toolbar-title{ padding-left:25px !important; text-align:left !important;} 
+
+.side_bar_head *{ background-color: #fff !important; }
+side_bar_head img{ width:80%; float:right;}
+.user_detail{ margin-top:35px;}
+.user_detail .user_name{ margin-left:0px; font-size:18px; color:#0084d6; font-family:arial; font-weight:bold; text-align:center;}
+.side_list .item-md{ padding-left:35px; margin-top:0px;color:#666666}
+.side_list .selected{border-left:5px solid #0084d6; }
+.side_list .item-inner{border-bottom:0px !important;}
+.side_list .item-divider-md{  border-left:0px;}
+.side_list .item-divider-md{ padding:10px; padding-top:5px;padding-bottom:5px;}
+
+.side_list .item-divider-md-light{ border-top:1px solid #ccc;}
+.side_list .item-divider-md-light .label{ padding-left:25px;}
+
+.side_list .item-divider-md *{font-size:20px !important }
+
+.side_list 	.label-md{ margin-top:0px;}
+.side_list 	.item-block{min-height:4rem}
+
+
+.text-center { text-align: center!important;}
+
+.logo-top img { margin-left: -90px!important;}
+
+.slogon { margin-top: -10px; margin-bottom: 15px;}
+ 
+ 
+.side_list ion-icon{margin-top:6px !important; margin-bottom:6px !important;}
+form .item-md {padding-left: 10px!important;}
+
+
+
+ion-menu .toolbar-background-md {  color:#fff; min-height:50px; }
+
+.side_heading_item{ margin-top:10px !important;}
+.set_divider{min-height:1px;}
+
+
+.toolbar-title-md {color: #fff!important; padding-left: 20px;}
+
+
+
+.whitewrap { background-color: #fff; padding: 10px; margin-bottom: 15px;}
+
+.whitewrap h5 {color:#31705D; margin-bottom: 5px; font-weight: normal; }
+
+ion-label {margin-bottom: 0px!important; padding-bottom: 0px!important; Font-size:15px!important;}
+.side_logout_button{ text-align:center;}
+.side_logout{ font-size:20px;}
+.side_my_logo_img{ width:70px;margin-top:15px;}
+
+

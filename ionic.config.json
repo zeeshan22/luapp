@@ -1,5 +1,8 @@
 {
-  "name": "claim",
-  "app_id": "",
-  "type": "ionic-angular"
+  "name": "Logic Utlity",
+  "app_id": "6c6c61c5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

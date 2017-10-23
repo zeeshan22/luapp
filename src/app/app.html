@@ -1,1 +1,68 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu id="myMenu" [content]="content">
+<!--  <ion-header  menuToggle class="side_bar_head">
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+-->
+  <ion-content>
+  	
+	
+    <ion-list class="side_list">
+		 <ion-item >
+		 <!--	<img src="http://oi66.tinypic.com/ilhez7.jpg" class="side_my_logo_img" style="height:70px;width:70px;margin-top:15px;">-->
+		 	<img src="./img/login_user_icon3.png" class="side_my_logo_img" style="height:70px;width:70px;margin-top:15px;">
+		 </ion-item>
+		 
+		 
+		<ion-item-divider color="light" class="side_divider"> Menu </ion-item-divider>
+
+
+
+		 <ion-item (click)="side_home()"><ion-icon name="ios-home" item-start></ion-icon>Home </ion-item>
+
+		 <ion-item (click)="side_aboutus()"><ion-icon name="ios-information-circle" item-start></ion-icon>About Us</ion-item>
+		
+		 <ion-item (click)="side_faq()"><ion-icon name="md-help-circle" item-start></ion-icon>FAQs </ion-item>
+		 <ion-item (click)="side_enquiry()"><ion-icon name="ios-call" item-start></ion-icon>Enquiry </ion-item>
+		
+	
+		<ion-item-divider color="light" class="side_divider"> Help Center </ion-item-divider>
+		
+		<ion-item (click)="go_to_about_this_app()"><ion-icon name="ios-tablet-portrait-outline" item-start></ion-icon>About this App</ion-item>
+		<ion-item (click)="go_to_term_of_use_mob()"><ion-icon name="ios-copy-outline" item-start></ion-icon>Terms of use </ion-item>
+		<ion-item (click)="go_to_tac()"><ion-icon name="ios-pricetags-outline" item-start></ion-icon>Terms &amp; conditions </ion-item>
+		<ion-item (click)="go_to_sos()"><ion-icon name="ios-card-outline" item-start></ion-icon>Schedule of charges</ion-item>
+	
+		 
+		<!--<ion-item (click)="side_setting()"><ion-icon name="md-settings" item-start></ion-icon>Settings </ion-item>
+		<ion-item ><ion-icon name="md-alert" item-start></ion-icon>Push Notification </ion-item>
+		<ion-item><ion-icon name="md-aperture" item-start></ion-icon>Remember me </ion-item>-->
+		
+		<ion-item-divider color="light" class="side_divider"> Notification Setting </ion-item-divider>
+		
+
+		
+		
+	  <ion-item >
+			<ion-label>&nbsp;Remember my login</ion-label>
+			<ion-toggle [(ngModel)]="pepperoni2" (ionChange)="change_login_setting()" ></ion-toggle>
+	  </ion-item>
+	  
+		
+		
+		
+		
+	
+	</ion-list>
+	
+	<div class="side_logout_button">
+		<button ion-button class="ios-log-out side_logout" (click)="side_logout()">  <ion-icon name="log-out"></ion-icon> Logout</button>
+	</div>
+	
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"           (ionOpen)="menuOpened()" ></ion-nav>

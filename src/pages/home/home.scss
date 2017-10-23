@@ -1,3 +1,49 @@
 page-home {
+ ion-header { background-color: #000!important; }
+    ion-navbar { background-color: #000!important; }
+    form ion-item {border: #89AF3A solid 1px!important; margin-bottom: 15px!important;}
+    .text-center { text-align: center!important;}
+    .logo-top img { margin-left: -45px;}
+    .slogon { margin-top: -10px; margin-bottom: 15px;}
+    a { text-decoration: none; color: #c00;}
+    form .item-md {padding-left: 10px!important;}
+	#tab-t1-0{ border-right:1px solid #ccc;}
 
 }
+
+
+.backgroud {
+
+	.scroll-content{ background-image:url('../assets/img/bg.jpg') ;background-size: cover !important;    }
+
+}
+
+h2{ color:#888B94;font-family: 'Montserrat',sans-serif ; font-weight:bold; }
+	h3{font-family: 'Lato', sans-serif; font-size:14px;}
+	
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+	
+	.home_heading_1{ text-align:center; padding:1px; overflow:hidden; margin-top:125px; }
+	.home_heading_2{ text-align:center; padding:1px; overflow:hidden;  }
+	.home_heading_2 h3{ margin-top:0px;   font-size: 10px; font-weight: bold;}
+	.home_heading_3 .inner{ margin:0 auto; text-align:center;  max-width:217px; font-size:8px; color:#a1a1a1; font-style:italic; font-weight:bold;}
+	.tabbar{ opacity:1;}
+	
+	.tabs-md .tab-button {
+	color: rgba(60, 60, 60, 0.7);
+	font-weight: bold;
+	min-height: 3.6rem;
+	padding: 0;
+	font-family:'Montserrat', sans-serif;
+	}
+	
+	.tabs-md .tab-button[aria-selected="true"]{ color: rgba(60, 60, 60, 0.7);}
+	.tabs-md .tab-button[aria-selected="true"] .tab-button-text{}
+	#tab-t0-0{ border-right:1px solid #ccc;}
+	
+	
+	
+	ion-toolbar {
+	  min-height: 40px;
+	}
+	.toolbar-md{ min-height:37px;}
